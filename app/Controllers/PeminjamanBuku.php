@@ -75,30 +75,4 @@ class PeminjamanBuku extends BaseController
         return redirect()->to('peminjaman_buku/'.$peminjaman_id);
     }
 
-    public function delete($peminjaman_buku_id)
-    {
-      $peminjaman = $this->PeminjamanBukuModel->where('id', $peminjaman_buku_id)->first();
-      $buku_id = $peminjaman['buku_id'];
-      $peminjaman_id = $peminjaman['peminjaman_id'];
-  
-      // dd($peminjaman_buku_id);
-  
-      $db = \Config\Database::connect();
-      $db->transStart();
-  
-      // delete 
-      $this->PeminjamanBukuModel->where('id', $peminjaman_buku_id)->delete();
-  
-      //ambil data stok di table buku
-      $buku = $this->BukuModel->where('id', $buku_id)->first();
-      $stok_baru = $buku['stok'] + 1;
-  
-      $this->BukuModel->update($buku_id, [
-        'stok' => $stok_baru,
-      ]);
-  
-      $db->transComplete();
-  
-      return redirect()->to('peminjaman_buku/'.$peminjaman_id);
-    }
 }
