@@ -67,6 +67,9 @@ $routes->post('/buku/insert', 'Buku::insert_save');
 $routes->get('/buku/(:segment)', 'Buku::update/$1');
 $routes->post('/buku/(:segment)', 'Buku::update_save/$1');
 $routes->get('/buku/delete/(:segment)', 'Buku::delete/$1');
+//export
+$routes->get('/buku_export_xls', 'BukuExport::export_xls');
+$routes->get('/buku_export_pdf', 'BukuExport::export_pdf');
 
 $routes->get('/kota', 'Kota::list');
 $routes->get('/kota/insert', 'Kota::insert');
@@ -74,6 +77,9 @@ $routes->post('/kota/insert', 'Kota::insert_save');
 $routes->get('/kota/(:segment)', 'Kota::update/$1');
 $routes->post('/kota/(:segment)', 'Kota::update_save/$1');
 $routes->get('/kota/delete/(:segment)', 'Kota::delete/$1');
+//export
+$routes->get('/kota_export_xls', 'KotaExport::export_xls');
+$routes->get('/kota_export_pdf', 'KotaExport::export_pdf');
 
 $routes->get('/konversi', 'Konversi::list');
 $routes->get('/konversi/insert', 'Konversi::insert');

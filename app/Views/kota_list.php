@@ -26,4 +26,5 @@
 </table>
 
 <br />
-<a href="<?= site_url('kota_export') ?>">Export Excel</a>
+<a href="<?= site_url('kota_export_xls') ?>">Export Excel</a>
+<a href="<?= site_url('kota_export_pdf') ?>">Export PDF</a>
