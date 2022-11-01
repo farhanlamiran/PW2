@@ -96,6 +96,7 @@ $routes->post('/peminjaman_buku/insert/(:segment)', 'PeminjamanBuku::insert_save
 $routes->get('/peminjaman_buku/delete/(:segment)', 'PeminjamanBuku::delete/$1');
 
 $routes->get('/chart/pie', 'Chart::pie');
+$routes->get('/chart/line', 'Chart::line');
 
 
 

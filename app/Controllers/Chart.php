@@ -23,4 +23,15 @@ class Chart extends BaseController
 
         return view('chart_pie', $output);
     }
+    public function line()
+    {
+        //select data from table buku
+        $list = $this->BukuModel->select('judul, stok')->orderBy('judul')->findAll();
+
+        $output = [
+            'list' => $list,
+        ];
+
+        return view('chart_line', $output);
+    }
 }
