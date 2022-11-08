@@ -18,7 +18,7 @@
         }],
           chart: {
           height: 350,
-          type: 'area',
+          type: 'bar',
           zoom: {
             enabled: false
           }
@@ -35,7 +35,7 @@
         },
         yaxis: {
           title: {
-            text: 'Temperature'
+            text: 'Quantity'
           },
           min: 0,
           max: 35
